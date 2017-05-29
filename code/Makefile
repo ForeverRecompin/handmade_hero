@@ -6,11 +6,11 @@ LINKER_FLAGS =
 
 OBJ_NAME = ../build/handmade
 
-all: compile run
+all: run
 
 compile: $(OBJS)
 	mkdir -p ../build
 	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
 
-run:
+run: compile
 	./$(OBJ_NAME)
